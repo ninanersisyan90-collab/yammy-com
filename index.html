@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <title>VAMI CON — Эклеры как искусство</title>
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+  <style>
+
+
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+
+
+    body {
+
+      background: #dfb0aa;
+
+      color: #4b2b24;
+
+      font-family: "Manrope", sans-serif;
+
+    }
+
+
+
+    .hero {
+
+      position: relative;
+
+      min-height: 100vh;
+
+      width: 100%;
+
+      overflow: hidden;
+
+
+
+      background:
+
+        radial-gradient(
+
+          circle at 52% 50%,
+
+          rgba(255, 255, 255, 0.35) 0%,
+
+          rgba(255, 255, 255, 0) 38%
+
+        ),
+
+        linear-gradient(
+
+          110deg,
+
+          #dfa9a4 0%,
+
+          #e0b2ad 45%,
+
+          #d5d1cf 100%
+
+        );
+
+    }
+
+
+
+
+
+    /* =========================
+
+       NAVIGATION
+
+    ========================= */
+
+
+
+    .nav {
+
+      position: relative;
+
+      z-index: 10;
+
+
+
+      width: 100%;
+
+      max-width: 1280px;
+
+
+
+      margin: 0 auto;
+
+      padding: 30px 35px;
+
+
+
+      display: grid;
+
+      grid-template-columns: 1fr auto 1fr;
+
+      align-items: center;
+
+    }
+
+
+
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 24px;
+
+    }
+
+
+
+    .nav-links a {
+
+      color: #4b2b24;
+
+      text-decoration: none;
+
+
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+
+
+      transition: opacity 0.25s ease;
+
+    }
+
+
+
+    .nav-links a:hover {
+
+      opacity: 0.55;
+
+    }
+
+
+
+
+
+    /* LOGO */
+
+
+
+    .logo {
+
+      justify-self: center;
+
+
+
+      color: #c94c99;
+
+
+
+      font-size: 22px;
+
+      font-weight: 800;
+
+      line-height: 0.78;
+
+
+
+      letter-spacing: -1.5px;
+
+
+
+      text-align: center;
+
+
+
+      transform: rotate(-5deg);
+
+    }
+
+
+
+
+
+    /* SOCIAL */
+
+
+
+    .social {
+
+      justify-self: end;
+
+
+
+      display: flex;
+
+      gap: 10px;
+
+    }
+
+
+
+    .social-item {
+
+      width: 34px;
+
+      height: 34px;
+
+
+
+      border-radius: 50%;
+
+
+
+      background: rgba(255,255,255,0.92);
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      color: #4b2b24;
+
+
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+    }
+
+
+
+
+
+    /* =========================
+
+       TITLE
+
+    ========================= */
+
+
+
+    .intro {
+
+      position: relative;
+
+      z-index: 5;
+
+
+
+      text-align: center;
+
+
+
+      margin-top: 32px;
+
+    }
+
+
+
+    .subtitle {
+
+      margin-bottom: 2px;
+
+
+
+      font-family: "Cormorant Garamond", serif;
+
+
+
+      font-size: 20px;
+
+      font-style: italic;
+
+
+
+      color: #735b56;
+
+    }
+
+
+
+    h1 {
+
+      font-family: "Cormorant Garamond", serif;
+
+
+
+      font-size: clamp(58px, 6vw, 86px);
+
+
+
+      font-weight: 600;
+
+      line-height: 0.9;
+
+
+
+      letter-spacing: -2px;
+
+
+
+      color: #4a2922;
+
+    }
+
+
+
+
+
+    /* =========================
+
+       ECLAIR AREA
+
+    ========================= */
+
+
+
+    .eclair-area {
+
+      position: absolute;
+
+
+
+      z-index: 3;
+
+
+
+      left: 50%;
+
+      top: 205px;
+
+
+
+      transform: translateX(-50%);
+
+
+
+      width: min(650px, 55vw);
+
+      height: 470px;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+
+
+
+
+    /*
+
+      ВРЕМЕННАЯ КОМПОЗИЦИЯ.
+
+
+
+      Позже сюда поставим Spline.
+
+    */
+
+
+
+    .eclairs {
+
+      position: relative;
+
+
+
+      width: 520px;
+
+      height: 320px;
+
+    }
+
+
+
+
+
+    .eclair {
+
+      position: absolute;
+
+
+
+      width: 310px;
+
+      height: 95px;
+
+
+
+      border-radius: 60px;
+
+
+
+      background:
+
+        linear-gradient(
+
+          180deg,
+
+          #eab66f 0%,
+
+          #c87932 100%
+
+        );
+
+
+
+      box-shadow:
+
+        0 25px 35px rgba(86,45,25,0.18);
+
+
+
+      transform: rotate(-12deg);
+
+
+
+      filter: saturate(0.95);
+
+    }
+
+
+
+
+
+    .eclair::after {
+
+      content: "";
+
+
+
+      position: absolute;
+
+
+
+      left: 35px;
+
+      right: 35px;
+
+
+
+      top: 17px;
+
+
+
+      height: 28px;
+
+
+
+      border-radius: 30px;
+
+
+
+      background: linear-gradient(
+
+        90deg,
+
+        #6d2e21,
+
+        #9a4a32
+
+      );
+
+
+
+      opacity: 0.95;
+
+    }
+
+
+
+
+
+    .eclair-one {
+
+      left: 80px;
+
+      top: 120px;
+
+
+
+      transform: rotate(-23deg);
+
+    }
+
+
+
+
+
+    .eclair-two {
+
+      left: 140px;
+
+      top: 80px;
+
+
+
+      transform: rotate(7deg);
+
+
+
+      background:
+
+        linear-gradient(
+
+          180deg,
+
+          #edbd78,
+
+          #ca823d
+
+        );
+
+    }
+
+
+
+    .eclair-two::after {
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          #eab4bd,
+
+          #f38fa7
+
+        );
+
+    }
+
+
+
+
+
+    .eclair-three {
+
+      left: 180px;
+
+      top: 165px;
+
+
+
+      width: 250px;
+
+
+
+      transform: rotate(24deg);
+
+    }
+
+
+
+    .eclair-three::after {
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          #9a7740,
+
+          #c6a65e
+
+        );
+
+    }
+
+
+
+
+
+    /* =========================
+
+       LEFT FLAVOURS
+
+    ========================= */
+
+
+
+    .flavours {
+
+      position: absolute;
+
+
+
+      z-index: 8;
+
+
+
+      left: max(7%, 40px);
+
+      top: 245px;
+
+
+
+      display: flex;
+
+      flex-direction: column;
+
+
+
+      gap: 20px;
+
+    }
+
+
+
+    .flavour {
+
+      width: 86px;
+
+      height: 86px;
+
+
+
+      border-radius: 20px;
+
+
+
+      border: 1px solid rgba(137, 91, 80, 0.25);
+
+
+
+      background: rgba(255, 225, 218, 0.28);
+
+
+
+      backdrop-filter: blur(5px);
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      font-size: 38px;
+
+
+
+      box-shadow:
+
+        inset 0 0 15px rgba(255,255,255,0.12);
+
+    }
+
+
+
+
+
+    /* =========================
+
+       RIGHT FEATURES
+
+    ========================= */
+
+
+
+    .features {
+
+      position: absolute;
+
+
+
+      z-index: 8;
+
+
+
+      right: max(6%, 35px);
+
+      top: 275px;
+
+
+
+      width: 180px;
+
+
+
+      display: flex;
+
+      flex-direction: column;
+
+
+
+      gap: 35px;
+
+    }
+
+
+
+    .feature {
+
+      text-align: center;
+
+    }
+
+
+
+    .feature-icon {
+
+      font-size: 34px;
+
+
+
+      height: 42px;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      margin-bottom: 7px;
+
+    }
+
+
+
+    .feature p {
+
+      font-family: "Cormorant Garamond", serif;
+
+
+
+      font-size: 19px;
+
+      font-style: italic;
+
+
+
+      line-height: 1;
+
+
+
+      color: #705853;
+
+    }
+
+
+
+
+
+    /* =========================
+
+       BUTTONS
+
+    ========================= */
+
+
+
+    .buttons {
+
+      position: absolute;
+
+
+
+      z-index: 10;
+
+
+
+      bottom: 65px;
+
+
+
+      left: 50%;
+
+
+
+      transform: translateX(-50%);
+
+
+
+      display: flex;
+
+
+
+      gap: 14px;
+
+    }
+
+
+
+    .button {
+
+      width: 168px;
+
+      height: 48px;
+
+
+
+      border-radius: 30px;
+
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+
+      text-decoration: none;
+
+
+
+      font-size: 12px;
+
+
+
+      transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease;
+
+    }
+
+
+
+    .button:hover {
+
+      transform: translateY(-3px);
+
+    }
+
+
+
+    .button-primary {
+
+      background: #cf50a0;
+
+
+
+      color: white;
+
+
+
+      box-shadow:
+
+        0 8px 20px rgba(185, 64, 135, 0.2);
+
+    }
+
+
+
+    .button-secondary {
+
+      border: 1px solid #cf50a0;
+
+
+
+      color: #cf50a0;
+
+
+
+      background: rgba(255,255,255,0.08);
+
+    }
+
+
+
+
+
+    /* =========================
+
+       MOBILE
+
+    ========================= */
+
+
+
+    @media (max-width: 800px) {
+
+
+
+      .nav {
+
+        padding: 22px 20px;
+
+
+
+        grid-template-columns: auto 1fr auto;
+
+      }
+
+
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+
+
+      .logo {
+
+        justify-self: start;
+
+      }
+
+
+
+      .intro {
+
+        margin-top: 45px;
+
+        padding: 0 20px;
+
+      }
+
+
+
+      .subtitle {
+
+        font-size: 16px;
+
+      }
+
+
+
+      h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -1px;
+
+      }
+
+
+
+      .eclair-area {
+
+        width: 100%;
+
+        top: 255px;
+
+      }
+
+
+
+      .eclairs {
+
+        transform: scale(0.72);
+
+      }
+
+
+
+      .flavours {
+
+        left: 15px;
+
+        top: 330px;
+
+
+
+        gap: 10px;
+
+      }
+
+
+
+      .flavour {
+
+        width: 55px;
+
+        height: 55px;
+
+
+
+        border-radius: 14px;
+
+
+
+        font-size: 24px;
+
+      }
+
+
+
+      .features {
+
+        right: 10px;
+
+        top: 330px;
+
+
+
+        width: 85px;
+
+
+
+        gap: 20px;
+
+      }
+
+
+
+      .feature-icon {
+
+        height: 30px;
+
+        font-size: 25px;
+
+      }
+
+
+
+      .feature p {
+
+        font-size: 14px;
+
+      }
+
+
+
+      .buttons {
+
+        width: calc(100% - 40px);
+
+
+
+        bottom: 25px;
+
+
+
+        gap: 8px;
+
+      }
+
+
+
+      .button {
+
+        width: 50%;
+
+      }
+
+    }
+
+
+
+  </style>
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+  <main class="hero">
+
+
+
+
+
+    <!-- NAVIGATION -->
+
+
+
+    <nav class="nav">
+
+
+
+      <div class="nav-links">
+
+
+
+        <a href="#">Главная</a>
+
+        <a href="#">О нас</a>
+
+        <a href="#">Меню</a>
+
+        <a href="#">Как заказать</a>
+
+        <a href="#">Контакты</a>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="logo">
+
+        VAMI<br>
+
+        CON
+
+      </div>
+
+
+
+
+
+      <div class="social">
+
+
+
+        <div class="social-item">☎</div>
+
+        <div class="social-item">◎</div>
+
+        <div class="social-item">VK</div>
+
+
+
+      </div>
+
+
+
+    </nav>
+
+
+
+
+
+    <!-- TITLE -->
+
+
+
+    <section class="intro">
+
+
+
+      <p class="subtitle">
+
+        Делаем эклеры к праздникам, свадьбам и корпоративам
+
+      </p>
+
+
+
+      <h1>
+
+        Эклеры — как искусство
+
+      </h1>
+
+
+
+    </section>
+
+
+
+
+
+    <!-- ECLAIRS -->
+
+
+
+    <div class="eclair-area">
+
+
+
+      <div class="eclairs">
+
+
+
+        <div class="eclair eclair-one"></div>
+
+
+
+        <div class="eclair eclair-two"></div>
+
+
+
+        <div class="eclair eclair-three"></div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- FLAVOURS -->
+
+
+
+    <div class="flavours">
+
+
+
+      <div class="flavour">🥝</div>
+
+
+
+      <div class="flavour">🍫</div>
+
+
+
+      <div class="flavour">🍓</div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- FEATURES -->
+
+
+
+    <div class="features">
+
+
+
+      <div class="feature">
+
+
+
+        <div class="feature-icon">♧</div>
+
+
+
+        <p>
+
+          Натуральные<br>
+
+          ингредиенты
+
+        </p>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="feature">
+
+
+
+        <div class="feature-icon">♧</div>
+
+
+
+        <p>
+
+          Доставка<br>
+
+          по городу
+
+        </p>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="feature">
+
+
+
+        <div class="feature-icon">♧</div>
+
+
+
+        <p>
+
+          Ручная<br>
+
+          работа
+
+        </p>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- BUTTONS -->
+
+
+
+    <div class="buttons">
+
+
+
+      <a href="#" class="button button-primary">
+
+        Оформить заказ
+
+      </a>
+
+
+
+      <a href="#" class="button button-secondary">
+
+        Посмотреть меню
+
+      </a>
+
+
+
+    </div>
+
+
+
+
+
+  </main>
+
+
+
+</body>
+
+</html>
